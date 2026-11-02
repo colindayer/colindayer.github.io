@@ -344,7 +344,7 @@ document.querySelectorAll('video').forEach(v =>
   items.forEach(it => it.addEventListener('click', () => {
     img.src = it.querySelector('img').src;
     img.alt = it.querySelector('img').alt;
-    cap.textContent = 'Sonic Redux — ' + it.querySelector('figcaption').textContent + ' · aluminium plate, mixed media · 2025';
+    cap.textContent = img.alt;
     box.hidden = false;
     document.body.style.overflow = 'hidden';
   }));

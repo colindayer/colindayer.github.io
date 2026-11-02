@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=12" />
+<link rel="stylesheet" href="css/style.css?v=13" />
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -214,6 +214,16 @@
         <div class="track-time">—</div>
       </article>
 
+      <article class="track" data-src="audio/invention-3-alt-wien.mp3">
+        <button class="track-play" aria-label="Play">▶</button>
+        <div class="track-body">
+          <div class="track-title">Invention 3 — <span>Alt-Wien</span></div>
+          <div class="track-desc">Composition study · 2026</div>
+          <div class="track-progress"><div class="track-bar"></div></div>
+        </div>
+        <div class="track-time">—</div>
+      </article>
+
       <article class="track" data-src="audio/invention-4-organ.mp3">
         <button class="track-play" aria-label="Play">▶</button>
         <div class="track-body">
@@ -229,6 +239,38 @@
         <div class="track-body">
           <div class="track-title">Invention 6</div>
           <div class="track-desc">Composition study · 2026</div>
+          <div class="track-progress"><div class="track-bar"></div></div>
+        </div>
+        <div class="track-time">—</div>
+      </article>
+
+      <div class="track-group">Character pieces — composition class (Skamletz), 2026</div>
+
+      <article class="track" data-src="audio/dolente-valse.mp3">
+        <button class="track-play" aria-label="Play">▶</button>
+        <div class="track-body">
+          <div class="track-title">Dolente — <span>valse</span></div>
+          <div class="track-desc">Character piece · 2026</div>
+          <div class="track-progress"><div class="track-bar"></div></div>
+        </div>
+        <div class="track-time">—</div>
+      </article>
+
+      <article class="track" data-src="audio/dolente-orchestration.mp3">
+        <button class="track-play" aria-label="Play">▶</button>
+        <div class="track-body">
+          <div class="track-title">Dolente — <span>orchestration</span></div>
+          <div class="track-desc">Character piece · 2026</div>
+          <div class="track-progress"><div class="track-bar"></div></div>
+        </div>
+        <div class="track-time">—</div>
+      </article>
+
+      <article class="track" data-src="audio/eroico.mp3">
+        <button class="track-play" aria-label="Play">▶</button>
+        <div class="track-body">
+          <div class="track-title">Eroico</div>
+          <div class="track-desc">Character piece · 2026</div>
           <div class="track-progress"><div class="track-bar"></div></div>
         </div>
         <div class="track-time">—</div>
@@ -257,16 +299,18 @@
 
     <div class="live-block">
       <h3 class="video-title">A Field of Relations <span>— continuous generative installation, app. 20 min · 2026</span></h3>
-      <div class="live-grid">
-        <div class="live-embed">
-          <video controls preload="metadata" playsinline style="position:absolute;inset:0;width:100%;height:100%;background:#000">
-            <source src="assets/plant-installation.mp4?v=2" type="video/mp4" />
-          </video>
-        </div>
-        <figure class="live-photo">
-          <img src="assets/plant-installation.jpg" alt="A Field of Relations — biofeedback plant installation, teal light" loading="lazy" />
-          <figcaption>Installation view</figcaption>
-        </figure>
+      <div class="live-embed" style="max-width:1000px">
+        <video controls preload="metadata" playsinline poster="assets/afor-1.jpg" style="position:absolute;inset:0;width:100%;height:100%;background:#000">
+          <source src="assets/plant-installation-2026.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="gallery gallery--doc">
+        <figure class="gallery-item"><img src="assets/afor-1.jpg" alt="A Field of Relations — installation view, 2026" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/afor-2.jpg" alt="A Field of Relations — reflective foil and caustics" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/afor-3.jpg" alt="A Field of Relations — the plant, wired" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/afor-4.jpg" alt="A Field of Relations — electrodes on the plant" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/afor-5.jpg" alt="A Field of Relations — inside the foil chamber" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/afor-6.jpg" alt="A Field of Relations — the plant's signal on screen" loading="lazy" /></figure>
       </div>
       <details class="prog-text">
         <summary>Program text</summary>
@@ -297,10 +341,24 @@
     <!-- SONIC REDUX -->
     <div class="live-block" id="sonic-redux">
       <h3 class="video-title">Sonic Redux <span>— performance, 15′ · À suivre 2025</span></h3>
+      <div class="live-embed" style="max-width:1000px">
+        <video controls preload="metadata" playsinline poster="assets/sonic-redux-perf-2.jpg" style="position:absolute;inset:0;width:100%;height:100%;background:#000">
+          <source src="assets/sonic-redux-performance.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <p class="gallery-caption">Performance excerpt, ~3 min of 15′ — À suivre documentation.</p>
+      <div class="gallery gallery--doc">
+        <figure class="gallery-item"><img src="assets/sonic-redux-setup-1.jpg" alt="Sonic Redux — performance setup, À suivre 2025" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-setup-2.jpg" alt="Sonic Redux — the plate on its rig" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-setup-3.jpg" alt="Sonic Redux — finished plate under light" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-perf-1.jpg" alt="Sonic Redux — placing the collage" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-perf-2.jpg" alt="Sonic Redux — working the plate" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-perf-3.jpg" alt="Sonic Redux — heat and spray, the finale" loading="lazy" /></figure>
+      </div>
       <div class="gallery">
-        <figure class="gallery-item"><img src="assets/sonic-redux-1.jpg?v=2" alt="Sonic Redux — performance residue I" loading="lazy" /><figcaption>I</figcaption></figure>
-        <figure class="gallery-item"><img src="assets/sonic-redux-2.jpg?v=2" alt="Sonic Redux — performance residue II" loading="lazy" /><figcaption>II</figcaption></figure>
-        <figure class="gallery-item"><img src="assets/sonic-redux-3.jpg?v=2" alt="Sonic Redux — performance residue III" loading="lazy" /><figcaption>III</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-1.jpg?v=2" alt="Sonic Redux — residue I · aluminium plate, mixed media · 2025" loading="lazy" /><figcaption>I</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-2.jpg?v=2" alt="Sonic Redux — residue II · aluminium plate, mixed media · 2025" loading="lazy" /><figcaption>II</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/sonic-redux-3.jpg?v=2" alt="Sonic Redux — residue III · aluminium plate, mixed media · 2025" loading="lazy" /><figcaption>III</figcaption></figure>
       </div>
       <p class="gallery-caption">Performance residues — mixed media on aluminium offset plates: paint, oil pastel, tape, print collage. 2025.</p>
       <details class="prog-text">
@@ -682,6 +740,6 @@
   <div class="player-time">0:00</div>
 </div>
 
-<script src="js/main.js?v=11"></script>
+<script src="js/main.js?v=13"></script>
 </body>
 </html>
