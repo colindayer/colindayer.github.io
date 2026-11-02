@@ -220,6 +220,7 @@ a{color:inherit;text-decoration:none}
 .track-title .hp{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--accent);margin-left:.4rem;vertical-align:middle}
 .track-desc{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink-dim);text-transform:uppercase;margin-top:.3rem}
 .track-progress{
+  touch-action:none;
   position:relative;height:14px;margin-top:.4rem;cursor:pointer;
 }
 .track-progress::before{ /* rail */
@@ -497,7 +498,7 @@ a{color:inherit;text-decoration:none}
 }
 .player-info{flex:1;min-width:0}
 .player-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.player-bar{height:3px;background:var(--line);margin-top:.5rem;cursor:pointer}
+.player-bar{height:3px;padding:7px 0;background:var(--line);background-clip:content-box;margin-top:-2px;cursor:pointer;touch-action:none}
 .player-fill{height:100%;width:0;background:var(--accent)}
 .player-time{font-family:var(--mono);font-size:.72rem;color:var(--ink-dim);flex:0 0 auto}
 

@@ -271,23 +271,35 @@ function playTrack(track){
   track.classList.add('active');
 }
 
+/* press/drag/release on a bar → apply(fraction, released) */
+function scrub(bar, apply){
+  const frac = e => { const r = bar.getBoundingClientRect(); return Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)); };
+  bar.addEventListener('pointerdown', e => {
+    bar.setPointerCapture(e.pointerId);
+    apply(frac(e), false);
+    const move = ev => apply(frac(ev), false);
+    bar.addEventListener('pointermove', move);
+    bar.addEventListener('pointerup', ev => { bar.removeEventListener('pointermove', move); apply(frac(ev), true); }, {once:true});
+  });
+  bar.addEventListener('click', e => e.stopPropagation());   // keep the track's own play/pause click out of it
+}
+
 tracks.forEach(track => {
   track.addEventListener('click', () => playTrack(track));
 
-  // click-to-seek on the track's progress bar
-  const prog = track.querySelector('.track-progress');
-  prog.addEventListener('click', e => {
-    e.stopPropagation();
-    const rect = prog.getBoundingClientRect();
-    const frac = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
-    if (currentTrack === track && !isNaN(audio.duration)){
-      audio.currentTime = frac * audio.duration;
-      if (audio.paused) audio.play();
-    } else {
-      playTrack(track);
+  let loading = false, pending = 0;
+  scrub(track.querySelector('.track-progress'), (f, released) => {
+    if (currentTrack !== track){
+      playTrack(track); loading = true;
       // wait for the NEW source: right after a src swap, duration can still report the old track's
-      audio.addEventListener('loadedmetadata', () => { audio.currentTime = frac * audio.duration; }, {once:true});
+      audio.addEventListener('loadedmetadata', () => {
+        loading = false;
+        if (currentTrack === track) audio.currentTime = pending * audio.duration;   // ignore if user moved on
+      }, {once:true});
     }
+    if (loading){ pending = f; return; }
+    audio.currentTime = f * audio.duration;
+    if (released && audio.paused) audio.play();
   });
 });
 
@@ -315,10 +327,7 @@ audio.addEventListener('ended', () => {
 });
 
 /* seek */
-playerBar.addEventListener('click', e => {
-  const rect = playerBar.getBoundingClientRect();
-  audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
-});
+scrub(playerBar, f => { if (!isNaN(audio.duration)) audio.currentTime = f * audio.duration; });
 
 /* pause video when audio starts and vice-versa */
 const video = document.querySelector('.video');
