@@ -285,9 +285,8 @@ tracks.forEach(track => {
       if (audio.paused) audio.play();
     } else {
       playTrack(track);
-      const seekWhenReady = () => { audio.currentTime = frac * audio.duration; };
-      if (!isNaN(audio.duration) && audio.duration) seekWhenReady();
-      else audio.addEventListener('loadedmetadata', seekWhenReady, {once:true});
+      // wait for the NEW source: right after a src swap, duration can still report the old track's
+      audio.addEventListener('loadedmetadata', () => { audio.currentTime = frac * audio.duration; }, {once:true});
     }
   });
 });

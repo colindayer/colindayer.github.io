@@ -154,12 +154,20 @@ a{color:inherit;text-decoration:none}
   letter-spacing:-.01em;
 }
 /* a little colour per section (mum's note) */
-#work .section-head h2{color:var(--accent)}
-#listen .section-head h2{color:var(--accent-2)}
+#piano .section-head h2{color:var(--accent)}
+#work .section-head h2{color:var(--accent-2)}
+#listen .section-head h2{color:#ffb638}
 #poetry .section-head h2{color:#5b8cff}
-#writing .section-head h2{color:#ffb638}
-#about .section-head h2{color:var(--accent)}
-#contact .section-head h2{color:var(--accent-2)}
+#writing .section-head h2{color:var(--accent)}
+#about .section-head h2{color:var(--accent-2)}
+#contact .section-head h2{color:#ffb638}
+
+/* live at the piano — featured, two sets side by side */
+.piano-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.piano-set{margin:0}
+.piano-set figcaption{margin-top:.9rem;font-family:var(--serif);font-size:1.1rem;color:var(--ink-dim)}
+.piano-set figcaption strong{color:var(--ink);font-weight:500}
+@media(max-width:760px){.piano-grid{grid-template-columns:1fr}}
 
 /* ---------- work grid ---------- */
 .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}

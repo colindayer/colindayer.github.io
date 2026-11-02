@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=13" />
+<link rel="stylesheet" href="css/style.css?v=14" />
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -27,6 +27,7 @@
     </div>
   </div>
   <nav class="nav">
+    <a href="#piano">Piano</a>
     <a href="#work">Work</a>
     <a href="#listen">Listen</a>
     <a href="#poetry">Poetry</a>
@@ -47,7 +48,7 @@
       <source src="assets/hero.mp4?v=2" type="video/mp4" />
     </video>
     <div class="hero-inner">
-      <p class="eyebrow">Musician · Sound Artist · Composer</p>
+      <p class="eyebrow">Pianist · Sound Artist · Composer</p>
       <h1 class="hero-title">Colin<br />Dayer</h1>
       <p class="hero-lede">
         Working at the intersection of <em>composition</em>, <em>sound art</em>
@@ -61,18 +62,47 @@
       </div>
     </div>
     <nav class="hero-index">
-      <a href="#work">01 — Work</a>
-      <a href="#listen">02 — Listen</a>
-      <a href="#poetry">03 — Poetry</a>
-      <a href="#writing">04 — Writing</a>
-      <a href="#about">05 — About</a>
+      <a href="#piano">01 — Piano</a>
+      <a href="#work">02 — Work</a>
+      <a href="#listen">03 — Listen</a>
+      <a href="#poetry">04 — Poetry</a>
+      <a href="#writing">05 — Writing</a>
+      <a href="#about">06 — About</a>
     </nav>
+  </section>
+
+  <!-- PIANO -->
+  <section id="piano" class="section">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>Live Piano Solo</h2>
+    </div>
+    <div class="piano-grid">
+      <figure class="piano-set">
+        <div class="live-embed">
+          <iframe src="https://www.youtube.com/embed/vUCsnB3HBtA" title="Colin Dayer — Live in the Lobby, Berlin 2023"
+                  loading="lazy" frameborder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+        </div>
+        <figcaption><strong>Live in the Lobby</strong> — Michelberger Hotel, Berlin 2023</figcaption>
+      </figure>
+      <figure class="piano-set">
+        <div class="live-embed">
+          <iframe src="https://www.youtube.com/embed/y7jfkttqpyw" title="Colin Dayer — Chat d'Or, Piano Bar 2024"
+                  loading="lazy" frameborder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+        </div>
+        <figcaption><strong>Chat d'Or</strong> — Piano Bar, 2024</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- WORK / SELECTED -->
   <section id="work" class="section">
     <div class="section-head">
-      <span class="num">01</span>
+      <span class="num">02</span>
       <h2>Selected Work</h2>
     </div>
 
@@ -124,7 +154,7 @@
   <!-- LISTEN -->
   <section id="listen" class="section listen">
     <div class="section-head">
-      <span class="num">02</span>
+      <span class="num">03</span>
       <h2>Listen</h2>
     </div>
 
@@ -244,7 +274,7 @@
         <div class="track-time">—</div>
       </article>
 
-      <div class="track-group">Character pieces — composition class (Skamletz), 2026</div>
+      <div class="track-group">Character pieces &amp; small inventions — composition class (Skamletz), 3rd semester</div>
 
       <article class="track" data-src="audio/dolente-valse.mp3">
         <button class="track-play" aria-label="Play">▶</button>
@@ -277,24 +307,6 @@
       </article>
     </div>
 
-    <div class="live-block">
-      <h3 class="video-title">Live in the Lobby <span>— Michelberger Hotel, Berlin 2023</span></h3>
-      <div class="live-embed" style="max-width:1000px">
-        <iframe src="https://www.youtube.com/embed/vUCsnB3HBtA" title="Colin Dayer — Live in the Lobby, Berlin 2023"
-                loading="lazy" frameborder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="live-block">
-      <h3 class="video-title">Chat d'Or <span>— Piano Bar, 2024</span></h3>
-      <div class="live-embed" style="max-width:1000px">
-        <iframe src="https://www.youtube.com/embed/y7jfkttqpyw" title="Colin Dayer — Chat d'Or, Piano Bar 2024"
-                loading="lazy" frameborder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-      </div>
     </div>
 
     <div class="live-block">
@@ -422,7 +434,7 @@
   <!-- WORDS / POEMS -->
   <section id="poetry" class="section words">
     <div class="section-head">
-      <span class="num">03</span>
+      <span class="num">04</span>
       <h2>Poetry</h2>
     </div>
 
@@ -606,7 +618,7 @@
   <!-- WRITING -->
   <section id="writing" class="section">
     <div class="section-head">
-      <span class="num">04</span>
+      <span class="num">05</span>
       <h2>Writing &amp; Research</h2>
     </div>
     <div class="writing-list">
@@ -655,7 +667,7 @@
   <!-- ABOUT -->
   <section id="about" class="section about">
     <div class="section-head">
-      <span class="num">05</span>
+      <span class="num">06</span>
       <h2>About</h2>
     </div>
     <div class="about-grid">
@@ -712,7 +724,7 @@
   <!-- CONTACT -->
   <section id="contact" class="section contact">
     <div class="section-head">
-      <span class="num">06</span>
+      <span class="num">07</span>
       <h2>Contact</h2>
     </div>
     <div class="contact-inner">
@@ -740,6 +752,6 @@
   <div class="player-time">0:00</div>
 </div>
 
-<script src="js/main.js?v=13"></script>
+<script src="js/main.js?v=14"></script>
 </body>
 </html>
