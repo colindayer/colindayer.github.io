@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colin Dayer, piano</title>
+<meta name="description" content="Live-Piano für Hotels, Bars und Restaurants in der Schweiz. Solo-Piano oder das Duo Laguna Breeze mit Gesang und Gitarre. Wintersaison 2026/27.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b0a09;
+    --ink-2: #141210;
+    --bone: #e8e2d6;
+    --ash: #8f887c;
+    --rule: #2b2724;
+    --wine: #7a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ink); }
+  body {
+    background: var(--ink);
+    color: var(--bone);
+    font: 400 20px/1.55 "Cormorant Garamond", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color .3s; }
+  a:hover { border-color: var(--bone); }
+  .sc { font-family: "Cormorant SC", Georgia, serif; letter-spacing: .14em; font-size: 15px; color: var(--ash); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+  /* header */
+  nav.top { position: absolute; top: 0; left: 0; right: 0; z-index: 2; }
+  nav.top .wrap { display: flex; justify-content: space-between; align-items: baseline; padding-top: 30px; }
+  nav.top .name { font-size: 22px; letter-spacing: .02em; border: 0; }
+  nav.top ul { list-style: none; display: flex; gap: 30px; }
+  nav.top ul a { border: 0; }
+  nav.top ul a:hover { color: var(--bone); }
+  .langm { display: none; }
+  @media (max-width: 860px) { .langm { display: inline; } }
+
+  /* hero */
+  .hero { position: relative; height: 92vh; min-height: 560px; overflow: hidden; }
+  .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 22%; filter: grayscale(1) contrast(1.05) brightness(.62); }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11,10,9,.35) 0%, rgba(11,10,9,0) 30%, rgba(11,10,9,.15) 60%, var(--ink) 100%); }
+  .hero .title { position: absolute; left: 0; right: 0; bottom: 9vh; z-index: 1; }
+  .hero h1 { font-weight: 400; font-size: clamp(56px, 10vw, 132px); line-height: .9; letter-spacing: -.01em; }
+  .hero h1 em { font-style: italic; color: var(--ash); }
+  .hero p { margin-top: 22px; max-width: 520px; font-size: 22px; color: var(--bone); opacity: .85; }
+
+  section { padding: 110px 0 0; }
+  .head { display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: baseline; border-top: 1px solid var(--rule); padding-top: 18px; margin-bottom: 44px; }
+  .head h2 { font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1; }
+  .head p { grid-column: 2; color: var(--ash); max-width: 620px; font-size: 19px; margin-top: 10px; }
+
+  video, .yt { width: 100%; display: block; background: #000; aspect-ratio: 16/9; border: 0; }
+  .wide video { filter: none; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+  .grid h3 { font-weight: 500; font-size: 23px; margin-top: 14px; line-height: 1.2; }
+  .grid .sc { display: block; margin-top: 4px; }
+
+  .formats { display: grid; grid-template-columns: 280px 1fr 1fr; gap: 48px; align-items: start; }
+  .formats .side img { width: 100%; height: auto; display: block; filter: grayscale(.35); }
+  .formats h3 { font-weight: 400; font-style: italic; font-size: 30px; margin-bottom: 10px; }
+  .formats p { color: #cfc8bb; }
+  ul.rep { list-style: none; columns: 2; column-gap: 56px; }
+  ul.rep li { padding: 9px 0; border-bottom: 1px solid var(--rule); break-inside: avoid; display: flex; justify-content: space-between; gap: 16px; }
+  ul.rep li span:last-child { color: var(--ash); font-style: italic; }
+
+  footer { padding: 130px 0 90px; }
+  footer .big { font-size: clamp(36px, 5.6vw, 72px); line-height: 1.05; }
+  footer .big a { border-bottom-color: var(--wine); }
+  footer .meta { margin-top: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--rule); padding-top: 18px; }
+
+  @media (max-width: 860px) {
+    nav.top ul { display: none; }
+    .head { grid-template-columns: 1fr; gap: 6px; }
+    .head p { grid-column: 1; }
+    .grid, .grid.two, .formats { grid-template-columns: 1fr; }
+    ul.rep { columns: 1; }
+    .wrap { padding: 0 16px; }
+    section { padding-top: 80px; }
+    .hero { height: auto; min-height: 0; }
+    .hero img { height: auto; aspect-ratio: 16/9; object-position: 70% 30%; }
+    .hero::after { display: none; }
+    .hero .title { position: static; margin-top: 26px; }
+    nav.top { position: static; }
+    nav.top .wrap { padding: 18px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="name" href="#">colin dayer</a>
+  <ul class="sc">
+    <li><a href="#listen">hören</a></li>
+    <li><a href="#solo">solo</a></li>
+    <li><a href="#duo">duo</a></li>
+    <li><a href="#formats">formate</a></li>
+    <li><a href="#contact">kontakt</a></li>
+    <li class="lang"><a href="../">en</a> · <a href="../fr/">fr</a> · de</li>
+  </ul>
+  <span class="langm sc"><a href="../">en</a> · <a href="../fr/">fr</a> · de</span>
+</div></nav>
+
+<header class="hero">
+  <img src="../media/photo.jpg" alt="Colin Dayer am Piano">
+  <div class="title"><div class="wrap">
+    <h1>colin dayer<br><em>piano</em></h1>
+    <p>Ich spiele Piano in Hotels, Bars und Restaurants. Allein, oder mit Quincy Freysinger als Duo Laguna Breeze.</p>
+  </div></div>
+</header>
+
+<main>
+<section id="listen"><div class="wrap">
+  <div class="head"><span class="sc">reel</span><h2>gut eine minute</h2><p>Live aufgenommen und gefilmt an der HKB Bern, August 2026.</p></div>
+  <video class="wide" controls preload="metadata" playsinline src="../media/reel.mp4" poster="../media/reel.jpg"></video>
+</div></section>
+
+<section id="venues"><div class="wrap">
+  <div class="head"><span class="sc">auftritte</span><h2>vor ort</h2><p>Gefilmt an echten Abenden: in der Lobby des Michelberger Hotels in Berlin, 2023, und in der Piano-Bar Chat d'Or, 2024.</p></div>
+  <div class="grid two">
+    <div><iframe class="yt" src="https://www.youtube.com/embed/vUCsnB3HBtA" title="Live in the Lobby — Michelberger Hotel, Berlin" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><h3>Live in the Lobby</h3><span class="sc">michelberger hotel · berlin · 2023</span></div>
+    <div><iframe class="yt" src="https://www.youtube.com/embed/y7jfkttqpyw" title="Chat d'Or — piano bar" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><h3>Chat d'Or</h3><span class="sc">piano bar · 2024</span></div>
+  </div>
+</div></section>
+
+<section id="solo"><div class="wrap">
+  <div class="head"><span class="sc">solo</span><h2>solo-piano</h2><p>Jazz-Standards, Bossa Nova und einige eigene Stücke, darunter Leaves.</p></div>
+  <div class="grid">
+    <div><video controls preload="none" playsinline src="../media/autumn-leaves.mp4" poster="../media/autumn-leaves.jpg"></video><h3>Autumn Leaves</h3><span class="sc">joseph kosma</span></div>
+    <div><video controls preload="none" playsinline src="../media/500-miles-high.mp4" poster="../media/500-miles-high.jpg"></video><h3>500 Miles High</h3><span class="sc">chick corea</span></div>
+    <div><video controls preload="none" playsinline src="../media/leaves.mp4" poster="../media/leaves.jpg"></video><h3>Leaves</h3><span class="sc">eigene komposition</span></div>
+  </div>
+</div></section>
+
+<section id="duo"><div class="wrap">
+  <div class="head"><span class="sc">duo</span><h2>laguna breeze</h2><p>Quincy singt und spielt Gitarre, ich spiele Piano. Vor allem brasilianische Songs und Soul, dazu ab und zu ein ganz langsamer Pink Floyd.</p></div>
+  <div class="grid">
+    <div><video controls preload="none" playsinline src="../media/agua-de-beber.mp4" poster="../media/agua-de-beber.jpg"></video><h3>Água de Beber</h3><span class="sc">antônio carlos jobim</span></div>
+    <div><video controls preload="none" playsinline src="../media/whats-going-on.mp4" poster="../media/whats-going-on.jpg"></video><h3>What's Going On</h3><span class="sc">marvin gaye</span></div>
+    <div><video controls preload="none" playsinline src="../media/the-wall.mp4" poster="../media/the-wall.jpg"></video><h3>Another Brick in the Wall</h3><span class="sc">pink floyd</span></div>
+  </div>
+</div></section>
+
+<section id="formats"><div class="wrap">
+  <div class="head"><span class="sc">buchung</span><h2>diesen winter</h2><p>Ab Dezember frei, im Wallis, in der Waadt und in Bern. Am liebsten ein fester Abend pro Woche, aber auch einzelne Abende und private Anlässe.</p></div>
+  <div class="formats">
+    <figure class="side"><img src="../media/console.jpg" alt="Colin Dayer at the studio console" width="408" height="408"></figure>
+    <div><h3>Solo</h3><p>Auf Ihrem Flügel oder Klavier, oder ich bringe ein Stage-Piano mit. Meist zwei oder drei Sets à 45 Minuten, vom Apéro bis ins Dinner.</p></div>
+    <div><h3>Duo</h3><p>Piano, Gesang und Gitarre. Passt gut in Bars, zum Après-Ski und an Feste, wo etwas mehr Energie gefragt ist.</p></div>
+  </div>
+</div></section>
+
+<section id="repertoire"><div class="wrap">
+  <div class="head"><span class="sc">repertoire</span><h2>eine auswahl</h2><p>Wünsche nehmen wir gerne entgegen.</p></div>
+  <ul class="rep">
+    <li><span>Autumn Leaves</span><span>Kosma</span></li>
+    <li><span>500 Miles High</span><span>Corea</span></li>
+    <li><span>Água de Beber</span><span>Jobim</span></li>
+    <li><span>Insensatez</span><span>Jobim</span></li>
+    <li><span>Desafinado</span><span>Jobim</span></li>
+    <li><span>Triste</span><span>Jobim</span></li>
+    <li><span>What's Going On</span><span>Gaye</span></li>
+    <li><span>Another Brick in the Wall</span><span>Pink Floyd</span></li>
+    <li><span>Leaves</span><span>Dayer</span></li>
+    
+  </ul>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <p class="sc" style="margin-bottom:14px">buchungen</p>
+  <p class="big"><a href="mailto:colin.dayer@gmail.com?subject=Live-Piano%20%E2%80%93%20Winter%202026%2F27">colin.dayer@gmail.com</a><br><a href="tel:+41787441231">+41 78 744 12 31</a></p>
+  <div class="meta sc"><span>colin dayer</span><span>ich antworte auf Deutsch, Französisch oder Englisch</span></div>
+</div></footer>
+
+</body>
+</html>

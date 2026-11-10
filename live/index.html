@@ -38,6 +38,8 @@
   nav.top ul { list-style: none; display: flex; gap: 30px; }
   nav.top ul a { border: 0; }
   nav.top ul a:hover { color: var(--bone); }
+  .langm { display: none; }
+  @media (max-width: 860px) { .langm { display: inline; } }
 
   /* hero */
   .hero { position: relative; height: 92vh; min-height: 560px; overflow: hidden; }
@@ -81,6 +83,12 @@
     ul.rep { columns: 1; }
     .wrap { padding: 0 16px; }
     section { padding-top: 80px; }
+    .hero { height: auto; min-height: 0; }
+    .hero img { height: auto; aspect-ratio: 16/9; object-position: 70% 30%; }
+    .hero::after { display: none; }
+    .hero .title { position: static; margin-top: 26px; }
+    nav.top { position: static; }
+    nav.top .wrap { padding: 18px 16px; }
   }
 </style>
 </head>
@@ -94,7 +102,9 @@
     <li><a href="#duo">duo</a></li>
     <li><a href="#formats">formats</a></li>
     <li><a href="#contact">contact</a></li>
+    <li class="lang">en · <a href="fr/">fr</a> · <a href="de/">de</a></li>
   </ul>
+  <span class="langm sc">en · <a href="fr/">fr</a> · <a href="de/">de</a></span>
 </div></nav>
 
 <header class="hero">
@@ -107,12 +117,12 @@
 
 <main>
 <section id="listen"><div class="wrap">
-  <div class="head"><span class="sc">reel</span><h2>a minute and a bit</h2><p>Recorded live at HKB Bern in August 2026. Six songs, nothing overdubbed.</p></div>
+  <div class="head"><span class="sc">reel</span><h2>a minute and a bit</h2><p>Recorded and filmed live at HKB Bern, August 2026.</p></div>
   <video class="wide" controls preload="metadata" playsinline src="media/reel.mp4" poster="media/reel.jpg"></video>
 </div></section>
 
 <section id="venues"><div class="wrap">
-  <div class="head"><span class="sc">gigs</span><h2>in the room</h2><p>Two evenings someone filmed. The lobby of the Michelberger Hotel in Berlin, 2023, and the Chat d'Or piano bar, 2024.</p></div>
+  <div class="head"><span class="sc">gigs</span><h2>in the room</h2><p>Filmed during real evenings: in the lobby of the Michelberger Hotel in Berlin, 2023, and at the Chat d'Or piano bar, 2024.</p></div>
   <div class="grid two">
     <div><iframe class="yt" src="https://www.youtube.com/embed/vUCsnB3HBtA" title="Live in the Lobby — Michelberger Hotel, Berlin" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><h3>Live in the Lobby</h3><span class="sc">michelberger hotel · berlin · 2023</span></div>
     <div><iframe class="yt" src="https://www.youtube.com/embed/y7jfkttqpyw" title="Chat d'Or — piano bar" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><h3>Chat d'Or</h3><span class="sc">piano bar · 2024</span></div>
