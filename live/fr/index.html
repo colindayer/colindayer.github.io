@@ -4,161 +4,138 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Colin Dayer, piano</title>
-<meta name="description" content="Piano live pour hôtels, bars et restaurants en Suisse. Piano solo, ou le duo Laguna Breeze avec chant et guitare. Saison d'hiver 2026/27.">
+<meta name="description" content="Piano live pour hôtels, bars et restaurants en Suisse. En solo, ou en duo Laguna Breeze avec chant et guitare. Hiver 2026/27.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #0b0a09;
-    --ink-2: #141210;
-    --bone: #e8e2d6;
-    --ash: #8f887c;
-    --rule: #2b2724;
-    --wine: #7a2a2a;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: var(--ink); }
-  body {
-    background: var(--ink);
-    color: var(--bone);
-    font: 400 20px/1.55 "Cormorant Garamond", Georgia, serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color .3s; }
-  a:hover { border-color: var(--bone); }
-  .sc { font-family: "Cormorant SC", Georgia, serif; letter-spacing: .14em; font-size: 15px; color: var(--ash); }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+  :root { --paper:#17150f; --paper-2:#1d1a14; --ink:#e9e2d2; --dim:#9d9483; --line:#3a3429; --accent:#b08d57; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { background:var(--paper); }
+  body { background:var(--paper); color:var(--ink); font:400 19px/1.55 "Newsreader", Georgia, "Times New Roman", serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:10; opacity:.07; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .frame { position:fixed; inset:14px; border:1px solid var(--line); pointer-events:none; z-index:9; }
+  .runner { position:fixed; left:30px; top:50%; transform:translateY(-50%) rotate(180deg); writing-mode:vertical-rl; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--dim); z-index:9; }
+  a { color:inherit; text-decoration:none; border-bottom:1px solid var(--line); }
+  a:hover { border-color:var(--accent); }
+  .caps { font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:var(--dim); font-weight:500; }
+  .bod { font-family:"Bodoni Moda", "Bodoni 72", Didot, serif; font-weight:400; }
+  .page { max-width:1180px; margin:0 auto; padding:0 60px 0 92px; }
 
-  /* header */
-  nav.top { position: absolute; top: 0; left: 0; right: 0; z-index: 2; }
-  nav.top .wrap { display: flex; justify-content: space-between; align-items: baseline; padding-top: 30px; }
-  nav.top .name { font-size: 22px; letter-spacing: .02em; border: 0; }
-  nav.top ul { list-style: none; display: flex; gap: 30px; }
-  nav.top ul a { border: 0; }
-  nav.top ul a:hover { color: var(--bone); }
-  .langm { display: none; }
-  @media (max-width: 860px) { .langm { display: inline; } }
+  header.top { display:flex; justify-content:space-between; align-items:baseline; padding:38px 0 0; }
+  header.top .name { border:0; font-family:"Bodoni Moda", serif; font-size:21px; letter-spacing:.04em; }
+  header.top nav a { border:0; margin-left:26px; }
+  header.top nav a.on { color:var(--ink); }
 
-  /* hero */
-  .hero { position: relative; height: 92vh; min-height: 560px; overflow: hidden; }
-  .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 22%; filter: grayscale(1) contrast(1.05) brightness(.62); }
-  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11,10,9,.35) 0%, rgba(11,10,9,0) 30%, rgba(11,10,9,.15) 60%, var(--ink) 100%); }
-  .hero .title { position: absolute; left: 0; right: 0; bottom: 9vh; z-index: 1; }
-  .hero h1 { font-weight: 400; font-size: clamp(56px, 10vw, 132px); line-height: .9; letter-spacing: -.01em; }
-  .hero h1 em { font-style: italic; color: var(--ash); }
-  .hero p { margin-top: 22px; max-width: 520px; font-size: 22px; color: var(--bone); opacity: .85; }
+  .hero { display:grid; grid-template-columns: 5fr 7fr; gap:0 48px; align-items:end; margin-top:48px; }
+  .hero h1 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(54px, 7.4vw, 108px); line-height:.92; letter-spacing:-.015em; }
+  .hero h1 i { font-style:italic; color:var(--dim); display:block; font-size:.62em; margin-top:.12em; }
+  .hero .lead { margin-top:26px; max-width:30ch; font-size:21px; }
+  .hero .lead em { font-style:italic; }
+  .hero figure { margin-right:-60px; position:relative; }
+  .hero figure img { display:block; width:100%; height:auto; filter:grayscale(1) sepia(.18) contrast(1.06) brightness(.9); }
+  .hero figure figcaption { position:absolute; left:-12px; bottom:18px; transform:rotate(-90deg); transform-origin:left bottom; white-space:nowrap; }
 
-  section { padding: 110px 0 0; }
-  .head { display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: baseline; border-top: 1px solid var(--rule); padding-top: 18px; margin-bottom: 44px; }
-  .head h2 { font-weight: 400; font-size: clamp(34px, 4.4vw, 52px); line-height: 1; }
-  .head p { grid-column: 2; color: var(--ash); max-width: 620px; font-size: 19px; margin-top: 10px; }
+  section { margin-top:140px; }
+  .sh { display:grid; grid-template-columns: 90px 1fr; align-items:baseline; gap:0 22px; margin-bottom:34px; }
+  .sh .n { font-family:"Bodoni Moda", serif; font-style:italic; font-size:58px; color:var(--dim); line-height:1; margin-left:-92px; text-align:right; width:60px; }
+  .sh h2 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(32px,4vw,46px); line-height:1.05; }
+  .sh p { grid-column:2; margin-top:10px; max-width:58ch; color:var(--dim); }
+  .rule { border:0; border-top:1px solid var(--line); margin:0 0 30px; }
 
-  video, .yt { width: 100%; display: block; background: #000; aspect-ratio: 16/9; border: 0; }
-  .wide video { filter: none; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .grid.two { grid-template-columns: repeat(2, 1fr); }
-  .grid h3 { font-weight: 500; font-size: 23px; margin-top: 14px; line-height: 1.2; }
-  .grid .sc { display: block; margin-top: 4px; }
+  video, .yt { width:100%; display:block; background:#000; aspect-ratio:16/9; border:0; }
+  .one { max-width:960px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+  .three { display:grid; grid-template-columns: 1.35fr 1fr 1fr; gap:28px; align-items:start; }
+  .three > div:nth-child(2) { margin-top:70px; }
+  .three > div:nth-child(3) { margin-top:140px; }
+  .card h3 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:24px; margin-top:14px; line-height:1.15; }
+  .card .caps { display:block; margin-top:6px; }
 
-  .formats { display: grid; grid-template-columns: 280px 1fr 1fr; gap: 48px; align-items: start; }
-  .formats .side img { width: 100%; height: auto; display: block; filter: grayscale(.35); }
-  .formats h3 { font-weight: 400; font-style: italic; font-size: 30px; margin-bottom: 10px; }
-  .formats p { color: #cfc8bb; }
-  ul.rep { list-style: none; columns: 2; column-gap: 56px; }
-  ul.rep li { padding: 9px 0; border-bottom: 1px solid var(--rule); break-inside: avoid; display: flex; justify-content: space-between; gap: 16px; }
-  ul.rep li span:last-child { color: var(--ash); font-style: italic; }
+  .booking { display:grid; grid-template-columns: 240px 1fr 1fr; gap:48px; align-items:start; }
+  .booking img { width:100%; display:block; filter:grayscale(.2) sepia(.25); border:1px solid var(--line); padding:6px; background:var(--paper-2); }
+  .booking h3 { font-family:"Bodoni Moda", serif; font-style:italic; font-weight:400; font-size:30px; margin-bottom:8px; }
 
-  footer { padding: 130px 0 90px; }
-  footer .big { font-size: clamp(36px, 5.6vw, 72px); line-height: 1.05; }
-  footer .big a { border-bottom-color: var(--wine); }
-  footer .meta { margin-top: 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--rule); padding-top: 18px; }
+  ol.prog { list-style:none; max-width:720px; }
+  ol.prog li { display:flex; align-items:baseline; gap:10px; padding:8px 0; }
+  ol.prog li::after { content:""; order:2; flex:1; border-bottom:1px dotted var(--line); }
+  ol.prog li span:first-child { order:1; }
+  ol.prog li span:last-child { order:3; color:var(--dim); font-style:italic; }
 
-  @media (max-width: 860px) {
-    nav.top ul { display: none; }
-    .head { grid-template-columns: 1fr; gap: 6px; }
-    .head p { grid-column: 1; }
-    .grid, .grid.two, .formats { grid-template-columns: 1fr; }
-    ul.rep { columns: 1; }
-    .wrap { padding: 0 16px; }
-    section { padding-top: 80px; }
-    .hero { height: auto; min-height: 0; }
-    .hero img { height: auto; aspect-ratio: 16/9; object-position: 70% 30%; }
-    .hero::after { display: none; }
-    .hero .title { position: static; margin-top: 26px; }
-    nav.top { position: static; }
-    nav.top .wrap { padding: 18px 16px; }
+  footer { margin:160px 0 70px; }
+  footer .big { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(30px,4.6vw,58px); line-height:1.1; }
+  footer .big a { border-bottom:1px solid var(--accent); }
+  footer .colophon { margin-top:44px; padding-top:18px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+
+  .more { margin-top:28px; color:var(--dim); max-width:70ch; }
+
+  @media (max-width: 900px) {
+    .runner, .frame { display:none; }
+    .page { padding:0 18px; }
+    header.top nav a { margin-left:14px; }
+    header.top nav .hide { display:none; }
+    .hero { grid-template-columns:1fr; gap:26px; margin-top:28px; }
+    .hero figure { margin-right:0; order:-1; }
+    .hero figure figcaption { position:static; transform:none; margin-top:8px; }
+    section { margin-top:90px; }
+    .sh { grid-template-columns:1fr; }
+    .sh .n { margin-left:0; text-align:left; width:auto; font-size:40px; }
+    .sh p { grid-column:1; }
+    .two, .three, .booking { grid-template-columns:1fr; }
+    .three > div { margin-top:0 !important; }
+    .booking img { max-width:260px; }
   }
 </style>
 </head>
 <body>
+<div class="frame"></div>
+<div class="runner">Colin Dayer · piano · hiver 2026/27</div>
 
-<nav class="top"><div class="wrap">
-  <a class="name" href="#">colin dayer</a>
-  <ul class="sc">
-    <li><a href="#listen">écouter</a></li>
-    <li><a href="#solo">solo</a></li>
-    <li><a href="#duo">duo</a></li>
-    <li><a href="#formats">formules</a></li>
-    <li><a href="#contact">contact</a></li>
-    <li class="lang"><a href="../">en</a> · fr · <a href="../de/">de</a></li>
-  </ul>
-  <span class="langm sc"><a href="../">en</a> · fr · <a href="../de/">de</a></span>
-</div></nav>
-
-<header class="hero">
-  <img src="../media/photo.jpg" alt="Colin Dayer au piano">
-  <div class="title"><div class="wrap">
-    <h1>colin dayer<br><em>piano</em></h1>
-    <p>Je joue du piano dans les hôtels, les bars et les restaurants. Seul, ou avec Quincy Freysinger en duo, Laguna Breeze.</p>
-  </div></div>
+<div class="page">
+<header class="top">
+  <a class="name" href="../">Colin Dayer</a>
+  <nav class="caps"><a class="hide" href="#reel">Clip</a><a class="hide" href="#songs">Deux morceaux</a><a class="hide" href="#contact">Contact</a> <span style="margin-left:26px"><a class="" href="../">en</a> · <a class="on" href="#">fr</a> · <a class="" href="../de/">de</a></span></nav>
 </header>
 
-<main>
-<section id="listen"><div class="wrap">
-  <div class="head"><span class="sc">extrait</span><h2>un peu plus d'une minute</h2><p>Enregistré et filmé en live à la HKB de Berne, août 2026.</p></div>
-  <video class="wide" controls preload="metadata" playsinline src="../media/reel.mp4" poster="../media/reel.jpg"></video>
-</div></section>
-
-<section id="venues"><div class="wrap">
-  <div class="head"><span class="sc">concerts</span><h2>en situation</h2><p>Filmé pendant de vraies soirées : dans le lobby du Michelberger Hotel à Berlin, 2023, et au piano-bar Chat d'Or, 2024.</p></div>
-  <div class="grid two">
-    <div><iframe class="yt" src="https://www.youtube.com/embed/vUCsnB3HBtA" title="Live in the Lobby — Michelberger Hotel, Berlin" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><h3>Live in the Lobby</h3><span class="sc">michelberger hotel · berlin · 2023</span></div>
-    <div><iframe class="yt" src="https://www.youtube.com/embed/y7jfkttqpyw" title="Chat d'Or — piano bar" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><h3>Chat d'Or</h3><span class="sc">piano bar · 2024</span></div>
+<div class="hero">
+  <div>
+    <h1>Colin Dayer<i>piano</i></h1>
+    <p class="lead">Je joue du piano dans les hôtels, les bars et les restaurants. Seul, ou avec Quincy Freysinger en duo, <em>Laguna Breeze</em>.</p>
   </div>
-</div></section>
+  <figure><img src="../media/photo.jpg?v=3" alt="Colin Dayer au piano"><figcaption class="caps">HKB Berne, août 2026</figcaption></figure>
+</div>
 
-<section id="solo"><div class="wrap">
-  <div class="head"><span class="sc">solo</span><h2>piano solo</h2><p>Standards de jazz, bossa nova et quelques compositions personnelles, dont Leaves.</p></div>
-  <div class="grid">
-    <div><video controls preload="none" playsinline src="../media/autumn-leaves.mp4" poster="../media/autumn-leaves.jpg"></video><h3>Autumn Leaves</h3><span class="sc">joseph kosma</span></div>
-    <div><video controls preload="none" playsinline src="../media/500-miles-high.mp4" poster="../media/500-miles-high.jpg"></video><h3>500 Miles High</h3><span class="sc">chick corea</span></div>
-    <div><video controls preload="none" playsinline src="../media/leaves.mp4" poster="../media/leaves.jpg"></video><h3>Leaves</h3><span class="sc">composition</span></div>
+<section id="reel">
+  <div class="sh"><span class="n">1</span><h2>Un peu plus d'une minute</h2><p>Enregistré et filmé en live à la HKB de Berne, août 2026.</p></div>
+  <hr class="rule">
+  <div class="one"><video controls preload="metadata" playsinline src="../media/clip.mp4?v=3" poster="../media/clip.jpg?v=3"></video></div>
+</section>
+
+<section id="songs">
+  <div class="sh"><span class="n">2</span><h2>Deux morceaux</h2><p>Un en solo, un avec Quincy. Tous deux enregistrés en live à la HKB de Berne, août 2026.</p></div>
+  <hr class="rule">
+  <div class="two">
+    <div class="card" id="solo"><video controls preload="none" playsinline src="../media/autumn-leaves.mp4?v=3" poster="../media/autumn-leaves.jpg?v=3"></video><h3>Autumn Leaves</h3><span class="caps">Piano solo · Joseph Kosma</span></div>
+    <div class="card" id="duo"><video controls preload="none" playsinline src="../media/agua-de-beber.mp4?v=3" poster="../media/agua-de-beber.jpg?v=3"></video><h3>Água de Beber</h3><span class="caps">Laguna Breeze · Antônio Carlos Jobim</span></div>
   </div>
-</div></section>
+  <p class="more">Plus : <a href="more/">six enregistrements complets</a> · <a href="https://www.youtube.com/watch?v=vUCsnB3HBtA">Michelberger Hotel, Berlin</a> · <a href="https://www.youtube.com/watch?v=y7jfkttqpyw">Chat d'Or</a></p>
+</section>
 
-<section id="duo"><div class="wrap">
-  <div class="head"><span class="sc">duo</span><h2>laguna breeze</h2><p>Quincy chante et joue de la guitare, je suis au piano. Surtout des chansons brésiliennes et de la soul, et parfois un Pink Floyd joué tout en lenteur.</p></div>
-  <div class="grid">
-    <div><video controls preload="none" playsinline src="../media/agua-de-beber.mp4" poster="../media/agua-de-beber.jpg"></video><h3>Água de Beber</h3><span class="sc">antônio carlos jobim</span></div>
-    <div><video controls preload="none" playsinline src="../media/whats-going-on.mp4" poster="../media/whats-going-on.jpg"></video><h3>What's Going On</h3><span class="sc">marvin gaye</span></div>
-    <div><video controls preload="none" playsinline src="../media/the-wall.mp4" poster="../media/the-wall.jpg"></video><h3>Another Brick in the Wall</h3><span class="sc">pink floyd</span></div>
-  </div>
-</div></section>
-
-<section id="formats"><div class="wrap">
-  <div class="head"><span class="sc">réservation</span><h2>cet hiver</h2><p>Disponible dès décembre, en Valais, dans le canton de Vaud et à Berne. Idéalement une soirée fixe par semaine, mais aussi des soirées ponctuelles ou des événements privés.</p></div>
-  <div class="formats">
-    <figure class="side"><img src="../media/console.jpg" alt="Colin Dayer at the studio console" width="408" height="408"></figure>
+<section id="booking">
+  <div class="sh"><span class="n">3</span><h2>Cet hiver</h2><p>Disponible dès décembre, en Valais, dans le canton de Vaud et à Berne. Idéalement une soirée fixe par semaine ; soirées ponctuelles et événements privés bienvenus.</p></div>
+  <hr class="rule">
+  <div class="booking">
+    <img src="../media/console.jpg?v=3" alt="Colin Dayer en studio" width="408" height="408">
     <div><h3>Solo</h3><p>Sur votre piano, à queue ou droit, ou j'apporte un piano de scène. En général deux ou trois sets de 45 minutes, de l'apéritif au dîner.</p></div>
-    <div><h3>Duo</h3><p>Piano, chant et guitare. Idéal pour les bars, l'après-ski et les fêtes, quand un peu plus d'énergie fait du bien.</p></div>
+    <div><h3>Duo</h3><p>Piano, chant et guitare. Pour les bars, l'après-ski et les fêtes, quand un peu plus d'énergie fait du bien.</p></div>
   </div>
-</div></section>
+</section>
 
-<section id="repertoire"><div class="wrap">
-  <div class="head"><span class="sc">répertoire</span><h2>quelques morceaux</h2><p>Une demande particulière ? Il suffit de demander.</p></div>
-  <ul class="rep">
+<section id="programme">
+  <div class="sh"><span class="n">4</span><h2>Programme</h2><p>Une sélection. Demandes bienvenues.</p></div>
+  <hr class="rule">
+  <ol class="prog">
     <li><span>Autumn Leaves</span><span>Kosma</span></li>
     <li><span>500 Miles High</span><span>Corea</span></li>
     <li><span>Água de Beber</span><span>Jobim</span></li>
@@ -168,16 +145,15 @@
     <li><span>What's Going On</span><span>Gaye</span></li>
     <li><span>Another Brick in the Wall</span><span>Pink Floyd</span></li>
     <li><span>Leaves</span><span>Dayer</span></li>
-    
-  </ul>
-</div></section>
-</main>
+  </ol>
+</section>
 
-<footer id="contact"><div class="wrap">
-  <p class="sc" style="margin-bottom:14px">réservations</p>
+<footer id="contact">
+  <p class="caps" style="margin-bottom:16px">Réservations</p>
   <p class="big"><a href="mailto:colin.dayer@gmail.com?subject=Piano%20live%20%E2%80%93%20hiver%202026%2F27">colin.dayer@gmail.com</a><br><a href="tel:+41787441231">+41 78 744 12 31</a></p>
-  <div class="meta sc"><span>colin dayer</span><span>je réponds en français, allemand ou anglais</span></div>
-</div></footer>
+  <div class="colophon caps"><span>Colin Dayer · Laguna Breeze</span><span>Je réponds en français, allemand ou anglais</span></div>
+</footer>
+</div>
 
 </body>
 </html>

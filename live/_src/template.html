@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{meta}}">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#17150f; --paper-2:#1d1a14; --ink:#e9e2d2; --dim:#9d9483; --line:#3a3429; --accent:#b08d57; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { background:var(--paper); }
+  body { background:var(--paper); color:var(--ink); font:400 19px/1.55 "Newsreader", Georgia, "Times New Roman", serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:10; opacity:.07; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .frame { position:fixed; inset:14px; border:1px solid var(--line); pointer-events:none; z-index:9; }
+  .runner { position:fixed; left:30px; top:50%; transform:translateY(-50%) rotate(180deg); writing-mode:vertical-rl; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--dim); z-index:9; }
+  a { color:inherit; text-decoration:none; border-bottom:1px solid var(--line); }
+  a:hover { border-color:var(--accent); }
+  .caps { font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:var(--dim); font-weight:500; }
+  .bod { font-family:"Bodoni Moda", "Bodoni 72", Didot, serif; font-weight:400; }
+  .page { max-width:1180px; margin:0 auto; padding:0 60px 0 92px; }
+
+  header.top { display:flex; justify-content:space-between; align-items:baseline; padding:38px 0 0; }
+  header.top .name { border:0; font-family:"Bodoni Moda", serif; font-size:21px; letter-spacing:.04em; }
+  header.top nav a { border:0; margin-left:26px; }
+  header.top nav a.on { color:var(--ink); }
+
+  .hero { display:grid; grid-template-columns: 5fr 7fr; gap:0 48px; align-items:end; margin-top:48px; }
+  .hero h1 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(54px, 7.4vw, 108px); line-height:.92; letter-spacing:-.015em; }
+  .hero h1 i { font-style:italic; color:var(--dim); display:block; font-size:.62em; margin-top:.12em; }
+  .hero .lead { margin-top:26px; max-width:30ch; font-size:21px; }
+  .hero .lead em { font-style:italic; }
+  .hero figure { margin-right:-60px; position:relative; }
+  .hero figure img { display:block; width:100%; height:auto; filter:grayscale(1) sepia(.18) contrast(1.06) brightness(.9); }
+  .hero figure figcaption { position:absolute; left:-12px; bottom:18px; transform:rotate(-90deg); transform-origin:left bottom; white-space:nowrap; }
+
+  section { margin-top:140px; }
+  .sh { display:grid; grid-template-columns: 90px 1fr; align-items:baseline; gap:0 22px; margin-bottom:34px; }
+  .sh .n { font-family:"Bodoni Moda", serif; font-style:italic; font-size:58px; color:var(--dim); line-height:1; margin-left:-92px; text-align:right; width:60px; }
+  .sh h2 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(32px,4vw,46px); line-height:1.05; }
+  .sh p { grid-column:2; margin-top:10px; max-width:58ch; color:var(--dim); }
+  .rule { border:0; border-top:1px solid var(--line); margin:0 0 30px; }
+
+  video, .yt { width:100%; display:block; background:#000; aspect-ratio:16/9; border:0; }
+  .one { max-width:960px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+  .three { display:grid; grid-template-columns: 1.35fr 1fr 1fr; gap:28px; align-items:start; }
+  .three > div:nth-child(2) { margin-top:70px; }
+  .three > div:nth-child(3) { margin-top:140px; }
+  .card h3 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:24px; margin-top:14px; line-height:1.15; }
+  .card .caps { display:block; margin-top:6px; }
+
+  .booking { display:grid; grid-template-columns: 240px 1fr 1fr; gap:48px; align-items:start; }
+  .booking img { width:100%; display:block; filter:grayscale(.2) sepia(.25); border:1px solid var(--line); padding:6px; background:var(--paper-2); }
+  .booking h3 { font-family:"Bodoni Moda", serif; font-style:italic; font-weight:400; font-size:30px; margin-bottom:8px; }
+
+  ol.prog { list-style:none; max-width:720px; }
+  ol.prog li { display:flex; align-items:baseline; gap:10px; padding:8px 0; }
+  ol.prog li::after { content:""; order:2; flex:1; border-bottom:1px dotted var(--line); }
+  ol.prog li span:first-child { order:1; }
+  ol.prog li span:last-child { order:3; color:var(--dim); font-style:italic; }
+
+  footer { margin:160px 0 70px; }
+  footer .big { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(30px,4.6vw,58px); line-height:1.1; }
+  footer .big a { border-bottom:1px solid var(--accent); }
+  footer .colophon { margin-top:44px; padding-top:18px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+
+  .more { margin-top:28px; color:var(--dim); max-width:70ch; }
+
+  @media (max-width: 900px) {
+    .runner, .frame { display:none; }
+    .page { padding:0 18px; }
+    header.top nav a { margin-left:14px; }
+    header.top nav .hide { display:none; }
+    .hero { grid-template-columns:1fr; gap:26px; margin-top:28px; }
+    .hero figure { margin-right:0; order:-1; }
+    .hero figure figcaption { position:static; transform:none; margin-top:8px; }
+    section { margin-top:90px; }
+    .sh { grid-template-columns:1fr; }
+    .sh .n { margin-left:0; text-align:left; width:auto; font-size:40px; }
+    .sh p { grid-column:1; }
+    .two, .three, .booking { grid-template-columns:1fr; }
+    .three > div { margin-top:0 !important; }
+    .booking img { max-width:260px; }
+  }
+</style>
+</head>
+<body>
+<div class="frame"></div>
+<div class="runner">{{runner}}</div>
+
+<div class="page">
+<header class="top">
+  <a class="name" href="{{home}}">Colin Dayer</a>
+  <nav class="caps"><a class="hide" href="#reel">{{nav_reel}}</a><a class="hide" href="#songs">{{nav_songs}}</a><a class="hide" href="#contact">{{nav_contact}}</a>{{langnav}}</nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Colin Dayer<i>{{h1_sub}}</i></h1>
+    <p class="lead">{{lead}}</p>
+  </div>
+  <figure><img src="{{root}}media/photo.jpg?v=3" alt="{{photo_alt}}"><figcaption class="caps">{{photo_cap}}</figcaption></figure>
+</div>
+
+<section id="reel">
+  <div class="sh"><span class="n">1</span><h2>{{s1_h}}</h2><p>{{s1_p}}</p></div>
+  <hr class="rule">
+  <div class="one"><video controls preload="metadata" playsinline src="{{root}}media/clip.mp4?v=3" poster="{{root}}media/clip.jpg?v=3"></video></div>
+</section>
+
+<section id="songs">
+  <div class="sh"><span class="n">2</span><h2>{{s2_h}}</h2><p>{{s2_p}}</p></div>
+  <hr class="rule">
+  <div class="two">
+    <div class="card" id="solo"><video controls preload="none" playsinline src="{{root}}media/autumn-leaves.mp4?v=3" poster="{{root}}media/autumn-leaves.jpg?v=3"></video><h3>Autumn Leaves</h3><span class="caps">{{solo_cap}}</span></div>
+    <div class="card" id="duo"><video controls preload="none" playsinline src="{{root}}media/agua-de-beber.mp4?v=3" poster="{{root}}media/agua-de-beber.jpg?v=3"></video><h3>Água de Beber</h3><span class="caps">{{duo_cap}}</span></div>
+  </div>
+  <p class="more">{{more_lead}} <a href="{{more_dir}}">{{more_link}}</a> · <a href="https://www.youtube.com/watch?v=vUCsnB3HBtA">Michelberger Hotel, Berlin</a> · <a href="https://www.youtube.com/watch?v=y7jfkttqpyw">Chat d'Or</a></p>
+</section>
+
+<section id="booking">
+  <div class="sh"><span class="n">3</span><h2>{{s5_h}}</h2><p>{{s5_p}}</p></div>
+  <hr class="rule">
+  <div class="booking">
+    <img src="{{root}}media/console.jpg?v=3" alt="{{console_alt}}" width="408" height="408">
+    <div><h3>{{solo}}</h3><p>{{solo_p}}</p></div>
+    <div><h3>{{duo}}</h3><p>{{duo_p}}</p></div>
+  </div>
+</section>
+
+<section id="programme">
+  <div class="sh"><span class="n">4</span><h2>{{s6_h}}</h2><p>{{s6_p}}</p></div>
+  <hr class="rule">
+  <ol class="prog">
+    <li><span>Autumn Leaves</span><span>Kosma</span></li>
+    <li><span>500 Miles High</span><span>Corea</span></li>
+    <li><span>Água de Beber</span><span>Jobim</span></li>
+    <li><span>Insensatez</span><span>Jobim</span></li>
+    <li><span>Desafinado</span><span>Jobim</span></li>
+    <li><span>Triste</span><span>Jobim</span></li>
+    <li><span>What's Going On</span><span>Gaye</span></li>
+    <li><span>Another Brick in the Wall</span><span>Pink Floyd</span></li>
+    <li><span>Leaves</span><span>Dayer</span></li>
+  </ol>
+</section>
+
+<footer id="contact">
+  <p class="caps" style="margin-bottom:16px">{{bookings}}</p>
+  <p class="big"><a href="mailto:colin.dayer@gmail.com?subject={{mailsubj}}">colin.dayer@gmail.com</a><br><a href="tel:+41787441231">+41 78 744 12 31</a></p>
+  <div class="colophon caps"><span>Colin Dayer · Laguna Breeze</span><span>{{langs_note}}</span></div>
+</footer>
+</div>
+
+</body>
+</html>
