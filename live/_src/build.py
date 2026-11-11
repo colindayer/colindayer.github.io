@@ -18,7 +18,7 @@ S = {
    console_alt="Colin Dayer in the studio", console_cap="HKB Bern",
    songs_h="Two whole songs", solo_cap="Solo · Joseph Kosma", duo_cap="Laguna Breeze · Antônio Carlos Jobim",
    more_lead="There are", more_link="six full recordings", venues_lead="And two evenings filmed in venues:", **{'and': "and"},
-   rep_h="Some of what I play", own="mine", rep_more="and whatever you ask for",
+   rep_h="Some of what I play", own="Colin Dayer", rep_more="and whatever you ask for",
    mailsubj="Live%20piano%20%E2%80%93%20winter%202026%2F27", note="I answer in English, French or German, usually the same day."),
  'fr': dict(title="Colin Dayer, piano", meta="Pianiste à Berne. Piano solo ou duo Laguna Breeze pour hôtels, bars et restaurants. Disponible dès décembre 2026.",
    nav_clip="Clip", nav_facts="Pratique", nav_contact="Contact", h1_sub="piano",
@@ -35,7 +35,7 @@ S = {
    console_alt="Colin Dayer en studio", console_cap="HKB Berne",
    songs_h="Deux morceaux entiers", solo_cap="Solo · Joseph Kosma", duo_cap="Laguna Breeze · Antônio Carlos Jobim",
    more_lead="Il y a", more_link="six enregistrements complets", venues_lead="Et deux soirées filmées en situation :", **{'and': "et"},
-   rep_h="Un peu de ce que je joue", own="de moi", rep_more="et ce que vous demanderez",
+   rep_h="Un peu de ce que je joue", own="Colin Dayer", rep_more="et ce que vous demanderez",
    mailsubj="Piano%20live%20%E2%80%93%20hiver%202026%2F27", note="Je réponds en français, en allemand ou en anglais, en général le jour même."),
  'de': dict(title="Colin Dayer, Piano", meta="Pianist in Bern. Solo-Piano oder das Duo Laguna Breeze für Hotels, Bars und Restaurants. Frei ab Dezember 2026.",
    nav_clip="Clip", nav_facts="Praktisches", nav_contact="Kontakt", h1_sub="Piano",
@@ -52,7 +52,7 @@ S = {
    console_alt="Colin Dayer im Studio", console_cap="HKB Bern",
    songs_h="Zwei ganze Stücke", solo_cap="Solo · Joseph Kosma", duo_cap="Laguna Breeze · Antônio Carlos Jobim",
    more_lead="Es gibt", more_link="sechs vollständige Aufnahmen", venues_lead="Und zwei gefilmte Abende vor Ort:", **{'and': "und"},
-   rep_h="Ein Teil von dem, was ich spiele", own="von mir", rep_more="und was Sie sich wünschen",
+   rep_h="Ein Teil von dem, was ich spiele", own="Colin Dayer", rep_more="und was Sie sich wünschen",
    mailsubj="Live-Piano%20%E2%80%93%20Winter%202026%2F27", note="Ich antworte auf Deutsch, Französisch oder Englisch, meist noch am selben Tag."),
 }
 MORE = {
