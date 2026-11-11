@@ -24,13 +24,17 @@
   header nav a { text-decoration:none; margin-left:22px; }
   header nav a.on { color:var(--fg); }
 
-  .top { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; margin-top:56px; }
-  .top h1 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(46px,6.4vw,84px); line-height:.95; }
-  .top h1 span { display:block; font-style:italic; color:var(--dim); font-size:.6em; margin-top:.15em; }
-  .top p { margin-top:24px; font-size:21px; max-width:34ch; }
-  .top img { width:100%; height:auto; display:block; filter:grayscale(1) contrast(1.05) brightness(.92); }
+  .hero { position:relative; margin:28px -24px 0; }
+  .hero img { width:100%; height:78vh; min-height:420px; max-height:860px; object-fit:cover; object-position:55% 45%; display:block; filter:contrast(1.04) saturate(.85); }
+  .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(22,20,17,.92) 0%, rgba(22,20,17,.35) 32%, rgba(22,20,17,0) 60%); }
+  .hero-text { position:absolute; left:24px; right:24px; bottom:34px; z-index:1; }
+  .hero h1 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(44px,6vw,80px); line-height:.95; }
+  .hero h1 span { display:block; font-style:italic; color:var(--dim); font-size:.55em; margin-top:.15em; }
+  .intro { margin-top:40px; max-width:62ch; }
+  .intro p { font-size:21px; }
+  .intro p + p { margin-top:16px; color:#cfc7b8; }
 
-  h2 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(30px,3.6vw,42px); line-height:1.05; margin-bottom:14px; }
+  h2 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:clamp(26px,3vw,34px); line-height:1.1; margin-bottom:12px; }
   .clip { margin-top:90px; }
   .clip p { color:var(--dim); margin-bottom:18px; }
   video, .yt { width:100%; display:block; background:#000; aspect-ratio:16/9; border:0; }
@@ -47,6 +51,13 @@
   .songs h3 { font-family:"Bodoni Moda", serif; font-weight:400; font-size:24px; margin-top:12px; }
   .songs .more { margin-top:26px; color:var(--dim); }
 
+  .venues { margin-top:90px; }
+  .venues .sub { color:var(--dim); margin-bottom:18px; max-width:62ch; }
+  .venues .two { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+  .yt-card { text-decoration:none; display:block; }
+  .yt-card img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; filter:grayscale(.3) contrast(1.05); }
+  .yt-card span { display:block; font-family:"Bodoni Moda", serif; font-size:22px; margin-top:12px; }
+  .yt-card small { display:block; margin-top:4px; }
   .rep { margin-top:90px; }
   .rep ul { list-style:none; columns:2; column-gap:48px; max-width:720px; }
   .rep li { padding:6px 0; border-bottom:1px solid var(--line); break-inside:avoid; }
@@ -66,7 +77,10 @@
     .facts img { max-width:240px; }
     .facts dl { grid-template-columns:1fr; gap:4px; }
     .facts dt { margin-top:10px; }
-    .songs .two { grid-template-columns:1fr; }
+    .songs .two, .venues .two { grid-template-columns:1fr; }
+    .hero { margin:16px -18px 0; }
+    .hero img { height:62vh; }
+    .hero-text { left:18px; right:18px; }
     .rep ul { columns:1; }
   }
 </style>
@@ -79,12 +93,13 @@
   <nav class="small"><a class="hide" href="#clip">Clip</a><a class="hide" href="#facts">Praktisches</a><a class="hide" href="#contact">Kontakt</a> <span style="margin-left:22px"><a class="" href="../">en</a> · <a class="" href="../fr/">fr</a> · <a class="on" href="#">de</a></span></nav>
 </header>
 
-<section class="top">
-  <div>
-    <h1>Colin Dayer<span>Piano</span></h1>
-    <p>Ich bin Pianist in Bern. Diesen Winter suche ich einen festen Abend in einer Hotelbar, einem Restaurant oder einer Lounge — im Wallis, in der Waadt oder rund um Bern. Allein am Flügel, oder mit Quincy Freysinger als Duo Laguna Breeze.</p>
-  </div>
-  <img src="../media/photo.jpg?v=4" alt="Colin Dayer am Piano">
+<section class="hero">
+  <img src="../media/hero.jpg?v=5" alt="Colin Dayer am Piano in einer Chalet-Lounge, im Dezember">
+  <div class="hero-text"><h1>Colin Dayer<span>Piano</span></h1></div>
+</section>
+<section class="intro">
+  <p>Ich bin Pianist in Bern. Diesen Winter suche ich einen festen Abend in einer Hotelbar, einem Restaurant oder einer Lounge — im Wallis, in der Waadt oder rund um Bern. Ein fester Abend pro Woche passt mir am besten; für eine ganze Saison fahre ich auch weiter.</p>
+  <p>Ich spiele allein am Flügel, oder mit Quincy Freysinger — Gesang und Gitarre — als Duo Laguna Breeze. Wir spielen seit ein paar Jahren zusammen; das Duo passt, wenn der Raum lauter ist, das Solo, wenn gegessen wird. Das Foto oben ist ein Dezemberabend in einer Chalet-Lounge: ungefähr so ist die Idee.</p>
 </section>
 
 <section class="clip" id="clip">
@@ -98,12 +113,12 @@
     <h2>Das Praktische</h2>
     <dl>
       <dt>Wann</dt><dd>Ab 1. Dezember 2026, für die Wintersaison. Am liebsten ein fester Abend pro Woche; einzelne Abende und private Anlässe gehen auch.</dd>
-      <dt>Wo</dt><dd>Wallis, Waadt und Bern zuerst. Weiter weg für eine Residenz.</dd>
+      <dt>Wo</dt><dd>Wallis, Waadt und Bern zuerst. Für eine Residenz über die Saison fahre ich überall in der Schweiz hin.</dd>
       <dt>Sets</dt><dd>Zwei oder drei Sets à 45 Minuten, vom Apéro bis ins Dinner. Die Lautstärke passt sich dem Raum an — man kann darüber reden oder zuhören.</dd>
       <dt>Piano</dt><dd>Ihres, Flügel oder Klavier. Wenn keines da ist, bringe ich ein Stage-Piano und einen kleinen Verstärker mit.</dd>
       <dt>Musik</dt><dd>Jazz-Standards, Bossa Nova, Soul, ein paar eigene Stücke. Wünsche willkommen, auch die, die Sie nicht mehr hören können.</dd>
       <dt>Duo</dt><dd>Mit Quincy an Gesang und Gitarre wird es wärmer und etwas lauter. Gut für Bars, Après-Ski und Feste.</dd>
-      <dt>Gage</dt><dd>Je nach Ort und Anzahl Abende. Fragen Sie, ich nenne Ihnen noch am selben Tag eine Zahl.</dd>
+      <dt>Gage</dt><dd>Kommt auf den Ort und die Zahl der Abende an. Fragen Sie, ich nenne Ihnen noch am selben Tag eine Zahl — ein fester Abend kostet pro Abend weniger als ein einzelner.</dd>
     </dl>
   </div>
   <figure><img src="../media/console.jpg?v=4" alt="Colin Dayer im Studio" width="408" height="408"><figcaption class="small">HKB Bern</figcaption></figure>
@@ -112,10 +127,19 @@
 <section class="songs" id="songs">
   <h2>Zwei ganze Stücke</h2>
   <div class="two">
-    <div><video controls preload="none" playsinline src="../media/autumn-leaves.mp4?v=4" poster="../media/autumn-leaves.jpg?v=4"></video><h3>Autumn Leaves</h3><span class="small">Solo · Joseph Kosma</span></div>
-    <div><video controls preload="none" playsinline src="../media/agua-de-beber.mp4?v=4" poster="../media/agua-de-beber.jpg?v=4"></video><h3>Água de Beber</h3><span class="small">Laguna Breeze · Antônio Carlos Jobim</span></div>
+    <div><video controls preload="none" playsinline src="../media/autumn-leaves.mp4?v=4" poster="../media/autumn-leaves.jpg?v=4"></video><h3>Autumn Leaves</h3><span class="small">Solo · Joseph Kosma · 3:51</span></div>
+    <div><video controls preload="none" playsinline src="../media/agua-de-beber.mp4?v=4" poster="../media/agua-de-beber.jpg?v=4"></video><h3>Água de Beber</h3><span class="small">Laguna Breeze · Antônio Carlos Jobim · 4:02</span></div>
   </div>
-  <p class="more">Es gibt <a href="more/">sechs vollständige Aufnahmen</a>. Und zwei gefilmte Abende vor Ort: <a href="https://www.youtube.com/watch?v=vUCsnB3HBtA">Michelberger Hotel, Berlin</a> und <a href="https://www.youtube.com/watch?v=y7jfkttqpyw">Chat d'Or</a>.</p>
+  <p class="more">Es gibt <a href="more/">sechs vollständige Aufnahmen</a>.</p>
+</section>
+
+<section class="venues">
+  <h2>Vor Ort</h2>
+  <p class="sub">Zwei Abende, die jemand gefilmt hat: eine Hotellobby in Berlin und eine Piano-Bar. Handyvideo, echte Räume.</p>
+  <div class="two">
+    <a class="yt-card" href="https://www.youtube.com/watch?v=vUCsnB3HBtA"><img src="https://img.youtube.com/vi/vUCsnB3HBtA/hqdefault.jpg" alt="Michelberger Hotel, Berlin"><span>Michelberger Hotel, Berlin</span><small class="small">Lobby-Set · 2023</small></a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=y7jfkttqpyw"><img src="https://img.youtube.com/vi/y7jfkttqpyw/hqdefault.jpg" alt="Chat d'Or"><span>Chat d'Or</span><small class="small">Piano-Bar · 2024</small></a>
+  </div>
 </section>
 
 <section class="rep">
