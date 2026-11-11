@@ -39,11 +39,11 @@
   .clip p { color:var(--dim); margin-bottom:18px; }
   video, .yt { width:100%; display:block; background:#000; aspect-ratio:16/9; border:0; }
 
-  .facts { margin-top:90px; display:grid; grid-template-columns:1fr 240px; gap:48px; align-items:start; }
+  .facts { margin-top:90px; display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; }
   .facts dl { display:grid; grid-template-columns:max-content 1fr; gap:10px 28px; margin-top:18px; }
   .facts dt { color:var(--dim); }
   .facts dd { margin:0; }
-  .facts img { width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; display:block; filter:grayscale(.2) sepia(.25); }
+  .facts img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; }
   .facts figcaption { margin-top:8px; }
 
   .songs { margin-top:90px; }
@@ -74,7 +74,7 @@
     .top img { order:-1; }
     .clip, .facts, .songs, .rep { margin-top:64px; }
     .facts { grid-template-columns:1fr; }
-    .facts img { max-width:240px; }
+    .facts img { max-width:100%; }
     .facts dl { grid-template-columns:1fr; gap:4px; }
     .facts dt { margin-top:10px; }
     .songs .two, .venues .two { grid-template-columns:1fr; }
@@ -121,7 +121,7 @@
       <dt>Tarif</dt><dd>Ça dépend du lieu et du nombre de soirées. Demandez, je vous donne un chiffre le jour même — une soirée régulière coûte moins cher par soir qu'une date isolée.</dd>
     </dl>
   </div>
-  <figure><img src="../media/console.jpg?v=4" alt="Colin Dayer en studio" width="408" height="408"><figcaption class="small">HKB Berne</figcaption></figure>
+  <figure><img src="../media/studio.jpg?v=5" alt="Colin Dayer en studio"><figcaption class="small">HKB Berne</figcaption></figure>
 </section>
 
 <section class="songs" id="songs">
